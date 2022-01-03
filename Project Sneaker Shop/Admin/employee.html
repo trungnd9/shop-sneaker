@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Sneaker - Manager</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- Data Table-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="dist/css/custom.css">
+</head>
+<style>
+    i {
+        cursor: pointer;
+    }
+    #form-employee label {
+        font-weight: 500;
+    }
+
+    i {
+        transition: transform .2s;
+        /* Animation */
+        margin: 0 auto;
+    }
+
+    i:hover {
+        transform: scale(1.5);
+        /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+    .required:after {
+        content:" *";
+        color: red;
+    }
+</style>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img src="/assets/img/Ellipsis-0.9s-180px.svg" alt="" class="loading-img animation__shake">
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars text-white"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link text-white">NHÂN VIÊN</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="dist/img/logo-pizza2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light text-white mx-2">Z-Sneaker</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user7-128x128.jpg" class="img-circle elevation-2" onclick="loginUser()" alt="User Image" id="user-image" style="width: 30px; height: 30px;">
+                        <div class="w3-dropdown-click">
+                            <div id="Demo" class="w3-dropdown-content w3-bar-block w3-animate-zoom w3-border w3-round-large mt-3 shadow" style="width: max-content; left: 50px; position: fixed;">
+                                <div class="w3-card-4">
+                                    <header class="w3-container w3-light-grey">
+                                        <h5><b>Thông tin chi tiết</b></h5>
+                                    </header>
+                                    <div class="w3-container">
+                                        <img src="dist/img/avatar2.png" alt="Avatar" class="w3-left w3-circle mt-2"
+                                            style="width: 50px;">
+                                        <p class="pt-2 mt-1 px-2" style="cursor: pointer;"><a class ="ms-3"id = ${responseUser.id}>username</a></p>
+                                    </div>
+                                    <ul class="w3-ul">
+                                        <li class="w3-hover-red btn-logout" style="cursor: pointer;">Đăng xuất</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block" id="show-username" onclick="loginUser()">Admin</a>
+                    </div>
+                </div>
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link w3-blue active w3-hover-green w3-hover-shadow">
+                                <i class="fas fa-table nav-icon"></i>
+                                <p>
+                                    Quản lý
+                                </p>
+                                <i class="right fas fa-angle-left"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="user.html" class="nav-link">
+                                        <i class="fas fa-user-lock nav-icon"></i>
+                                        <p>User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="customers.html" class="nav-link ">
+                                        <i class="fas fa-users nav-icon"></i>
+                                        <p>Khách hàng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="payment.html" class="nav-link">
+                                        <i class="fas fa-money-check-alt nav-icon"></i>
+                                        <p>Thanh toán</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="orders.html" class="nav-link">
+                                        <i class="fab fa-first-order-alt nav-icon"></i>
+                                        <p>Đơn hàng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="product.html" class="nav-link">
+                                        <i class="fab fa-product-hunt nav-icon"></i>
+                                        <p>Sản phẩm</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="productLine.html" class="nav-link">
+                                        <i class="fab fa-product-hunt nav-icon"></i>
+                                        <p>Dòng sản phẩm</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="employee.html" class="nav-link active">
+                                        <i class="fas fa-user-tie nav-icon"></i>
+                                        <p>Nhân viên</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="office.html" class="nav-link">
+                                        <i class="fas fa-building nav-icon"></i>
+                                        <p>Văn phòng</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link w3-blue active w3-hover-green w3-hover-shadow">
+                                <i class="fas fa-exclamation-circle nav-icon"></i>
+                                <p>
+                                    Báo cáo
+                                </p>
+                                <i class="right fas fa-angle-left"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="orderReport.html" class="nav-link">
+                                        <i class="fab fa-first-order-alt nav-icon"></i>
+                                        <p>Đơn hàng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="customersReport.html" class="nav-link">
+                                        <i class="fas fa-users nav-icon"></i>
+                                        <p>Khách hàng</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="content-wrapper mb-5 pb-3">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2 mt-5">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">DANH SÁCH NHÂN VIÊN</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Bảng nhân viên</a></li>
+                                <li class="breadcrumb-item active">Danh sách nhân viên</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                    <div class="row mt-5 mb-2 mx-1">
+                        <button class="btn btn-success" id="btn-add-employee"><i class="fas fa-plus mr-2"></i>Thêm nhân viên</button>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid" id="form-filter">
+                    <!-- Tabel -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered table-striped table-hover w-100" id="employee-table">
+                                <thead class="w3-blue">
+                                    <tr>
+                                        <td>STT</td>
+                                        <td>Lastname</td>
+                                        <td>Firstname</td>
+                                        <td>Extension</td>
+                                        <td>Email</td>
+                                        <td>Office Code</td>
+                                        <td>Report To</td>
+                                        <td>Job Title</td>
+                                        <td>Tên tài khoản</td>
+                                        <td>Action</td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer fixed-bottom">
+            <strong>Copyright &copy; 2014-2021 <a href="#">z.sneaker.vn</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0-rc
+            </div>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade bd-example-modal-lg" id="modal-employee" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header w3-blue">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Thêm Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="voucher" id="form-employee">
+                    <div class="modal-body">
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="" class="required">Lastname</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="text" class="form-control" id="inp-lastname">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="" class="required">Firstname</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="orderCode" type="text" class="form-control" id="inp-firstname">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="" class="required">Email</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="text" class="form-control" id="inp-email">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="">Extention</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="text" class="form-control" id="inp-extention">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="">Office Code</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="number" class="form-control" id="inp-office-code">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="">report To</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="number" class="form-control" id="inp-report-to">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="">Job Title</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input name="" type="text" class="form-control" id="inp-job-title">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" id="btn-save-employee">Thêm</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jquery-validation -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<!-- sweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- DataTable -->
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<!-- moment -->
+<script src="plugins/moment/moment.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!--javacript-->
+<script src="js/employee.js"></script>
+<script src="js/login.js"></script>
+<script>
+    // //Initialize Select2 Elements
+    // $('.select2').select2({
+    //     theme: 'bootstrap4'
+    // })
+
+</script>
+
+</html>

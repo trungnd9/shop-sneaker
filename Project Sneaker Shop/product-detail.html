@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Z-Sneaker - Product Detail Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="assets/css/product-cart.css">
+    <!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body>
+    <!-- loading -->
+    <!-- loading -->
+    <div class="loading">
+        <img src="assets/img/Ellipsis-0.9s-180px.svg" alt="" class="loading-img">
+    </div>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow bg-white" id="narBar">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Z-Sneaker
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                        data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none product-number" href="cart.html">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                    </a>
+                    <div class="w3-dropdown-hover">
+                        <i class="fa fa-fw fa-user text-dark mr-3 w3-button w3-button avatar-logout"
+                            style="padding: 5px 0px;"></i>
+                        <img src="" alt="" style="width: 32px; height: 32px; left: 0; display: none;"
+                            class="w3-left w3-circle avatar-login">
+                        <div class="w3-dropdown-content w3-bar-block shadow nav-user-detail" style="right: 0;">
+                            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div style="margin-top: 1rem;">.</div>
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5 content-product-detail">
+            <div class="row items">
+                <div class="col-lg-5 mt-5" id="div-slide-product">
+
+
+                </div>
+                <!-- col end -->
+                <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body w3-animate-bottom" id="card-detail">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Content -->
+
+    <!-- Start Article -->
+    <section class="py-5">
+        <div class="container">
+            <div class="container-wrapper">
+                <div class="container d-flex align-items-center justify-content-center">
+                    <div class="row justify-content-center">
+
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group mb-3" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-primary btn-other-product">Các sản phẩm khác</button>
+                <button type="button" class="btn btn-outline-primary btn-review">Đánh giá</button>
+            </div>
+
+            <section class="bg-light">
+                <div class="container-fluid py-5 border rounded-1" id="product-similar">
+
+                </div>
+            </section>
+            <div class="rating-review mt-5" id="rating-review" style="display: none;">
+                <div class="header-review">
+                    <h4>Đánh giá sản phẩm</h4>
+                </div>
+                <div class="container-rating border rounded-1 mt-3 mb-3">
+                    <div class="row p-3" id="show-rating">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="well well-sm">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 text-center">
+                                        <h1 class="rating-num" id="average-rating">
+                                            4.0</h1>
+                                        <div class="rating">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div>
+                                            <span class="glyphicon glyphicon-user">Tổng số: </span><a href="" id="total-rating">Tổng số: </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="row rating-desc">
+                                            <div class="col-xs-3 col-md-3 text-right rating-star">
+                                                <i class="fas fa-star text-warning mx-2"></i>5
+                                            </div>
+                                            <div class="col-xs-8 col-md-9 rating-star-percent">
+                                                <div class="progress progress-striped">
+                                                    <div id="five-star" class="progress-bar progress-bar-success" role="progressbar"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 80%">
+                                                        <span class="sr-only">80%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end 5 -->
+                                            <div class="col-xs-3 col-md-3 text-right rating-star">
+                                                <i class="fas fa-star text-warning mx-2"></i>4
+                                            </div>
+                                            <div class="col-xs-8 col-md-9 rating-star-percent">
+                                                <div class="progress">
+                                                    <div id="four-star" class="progress-bar progress-bar-success" role="progressbar"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 60%">
+                                                        <span class="sr-only">60%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end 4 -->
+                                            <div class="col-xs-3 col-md-3 text-right rating-star">
+                                                <i class="fas fa-star text-warning mx-2"></i>3
+                                            </div>
+                                            <div class="col-xs-8 col-md-9 rating-star-percent">
+                                                <div class="progress">
+                                                    <div id="three-star" class="progress-bar progress-bar-info" role="progressbar"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 40%">
+                                                        <span class="sr-only">40%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end 3 -->
+                                            <div class="col-xs-3 col-md-3 text-right rating-star">
+                                                <i class="fas fa-star text-warning mx-2"></i>2
+                                            </div>
+                                            <div class="col-xs-8 col-md-9 rating-star-percent">
+                                                <div class="progress">
+                                                    <div id="two-star" class="progress-bar progress-bar-warning" role="progressbar"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 20%">
+                                                        <span class="sr-only">20%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end 2 -->
+                                            <div class="col-xs-3 col-md-3 text-right rating-star">
+                                                <i class="fas fa-star text-warning mx-2"></i>1
+                                            </div>
+                                            <div class="col-xs-8 col-md-9 rating-star-percent">
+                                                <div class="progress">
+                                                    <div id="one-star" class="progress-bar progress-bar-danger" role="progressbar"
+                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 1.1%">
+                                                        <span class="sr-only">15%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end 1 -->
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-review" id="show-review">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr />
+                            <div class="review-block">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="assets/img/user/user.jpg"
+                                            class="img-rounded" width="25%">
+                                        <div class="review-block-name d-inline"><a href="#">nktailor</a></div>
+                                        <div class="review-block-date ">January 29, 2016</div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="review-block-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="review-block-title">this was nice in buy</div>
+                                        <div class="review-block-description">this was nice in buy. this was nice in
+                                            buy. this was nice in buy. this was nice in buy this was nice in buy this
+                                            was nice in buy this was nice in buy this was nice in buy</div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr />
+                            <div class="review-block">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img src="assets/img/user/user.jpg"
+                                            class="img-rounded" width="25%">
+                                        <div class="review-block-name d-inline"><a href="#">nktailor</a></div>
+                                        <div class="review-block-date ">January 29, 2016</div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="review-block-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="review-block-title">this was nice in buy</div>
+                                        <div class="review-block-description">this was nice in buy. this was nice in
+                                            buy. this was nice in buy. this was nice in buy this was nice in buy this
+                                            was nice in buy this was nice in buy this was nice in buy</div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- End Article -->
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Z-Sneaker</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Đường Cầu Giấy - Hà Nội
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">z.sneaker@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Sản phẩm</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Adidass</a></li>
+                        <li><a class="text-decoration-none" href="#">Nike</a></li>
+                        <li><a class="text-decoration-none" href="#">Puma</a></li>
+                        <li><a class="text-decoration-none" href="#">Boston</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                        <li><a class="text-decoration-none" href="#">About Us</a></li>
+                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
+                            placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name
+                            | Designed by <a rel="sponsored" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+    <div class="modal">
+
+    </div>
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+    <script src='assets/js/flycart.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="assets/js/product-detail.js"></script>
+    <script src="assets/js/rating.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/Admin/plugins/moment/moment.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/customer.js" async></script>
+    <!-- End Script -->
+    <!-- Start Slider Script -->
+    <script src="assets/js/slick.min.js"></script>
+
+    <!-- End Slider Script -->
+    <script>
+        $('#carousel-related-product').slick({
+            infinite: true,
+            arrows: false,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            dots: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 3
+                }
+            }
+            ]
+        });
+    </script>
+    <!-- End Slider Script -->
+</body>
+
+</html>

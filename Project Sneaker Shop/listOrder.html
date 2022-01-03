@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Z-Sneaker - Order List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+<style>
+    #form-customer label.error {
+        color: red;
+    }
+</style>
+
+<body>
+    <!-- loading -->
+    <div class="loading">
+        <img src="assets/img/Ellipsis-0.9s-180px.svg" alt="" class="loading-img">
+    </div>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow bg-white" id="narBar">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Z-Sneaker
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                        data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none product-number" href="cart.html">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                    </a>
+                    <div class="w3-dropdown-hover">
+                        <i class="fa fa-fw fa-user text-dark mr-3 w3-button w3-button avatar-logout"
+                            style="padding: 5px 0px;"></i>
+                        <img src="" alt="" style="width: 32px; height: 32px; left: 0; display: none;"
+                            class="w3-left w3-circle avatar-login">
+                        <div class="w3-dropdown-content w3-bar-block shadow nav-user-detail" style="right: 0;">
+                            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="margin-top: 1rem;">a</div>
+    <div class="mt-5 pt-3 text-center">
+        <h2>Danh sách các sản phẩm đã mua</h2>
+    </div>
+    <section>
+        <div class="container list-product-order">
+            
+        </div>
+    </section>
+
+
+
+    <!-- Start Brands -->
+    <section class="bg-light py-5">
+        <div class="container my-4">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Thương hiệu</h1>
+                    <p>
+                        Chúng tôi có tất cả sản phẩm của các thương hiệu nổi tiếng trên thế giới.
+                    </p>
+                </div>
+                <div class="col-lg-9 m-auto tempaltemo-carousel">
+                    <div class="row d-flex flex-row">
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev">
+                                <i class="text-light fas fa-chevron-left"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+
+                        <!--Carousel Wrapper-->
+                        <div class="col">
+                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example"
+                                data-bs-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner product-links-wap" role="listbox">
+
+                                    <!--First slide-->
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End First slide-->
+
+                                    <!--Second slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Second slide-->
+
+                                    <!--Third slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Third slide-->
+
+                                </div>
+                                <!--End Slides-->
+                            </div>
+                        </div>
+                        <!--End Carousel Wrapper-->
+
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next">
+                                <i class="text-light fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Brands-->
+
+    <!-- modal rating-->
+    <div class="modal fade" id="modal-review-product" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header w3-green">
+                    <div class="row">
+                        <h5 class="text-center m-0">Đánh giá sản phẩm</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-detail">
+                        <img src="assets/img/brand_02.png" alt="" width="15%">
+                        <b class="ms-2">Thông tin</b>
+                    </div>
+                    <div class='rating-stars text-center mt-3'>
+                        <ul id='stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="review-product mt-3 mb-3" style="display: none;">
+                        <textarea class="form-control" cols="30" rows="5" id="create-message-product"></textarea>
+                    </div>
+                    <div class="modal-footer p-0" style="margin-bottom: -0.75rem!important;">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-outline-success" id="btn-send-review">Gửi đánh giá</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal show rating -->
+    <div class="modal fade" id="modal-show-review-product" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header w3-green">
+                    <div class="row">
+                        <h5 class="text-center m-0">Đánh giá của bạn</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-detail">
+                        <img src="assets/img/brand_02.png" alt="" width="15%">
+                        <b class="ms-2">Thông tin</b>
+                    </div>
+                    <div class='rating-stars text-center mt-3'>
+                        <ul id='show-stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="review-product mt-3 mb-3">
+                        <textarea class="form-control" cols="30" rows="5" id="edit-message-product"></textarea>
+                    </div>
+                    <div class="modal-footer p-0" style="margin-bottom: -0.75rem!important;">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-outline-success" id="btn-edit-review">Sửa đánh giá</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Z-Sneaker</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Đường Cầu Giấy - Hà Nội
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">z.sneaker@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Sản phẩm</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Adidass</a></li>
+                        <li><a class="text-decoration-none" href="#">Nike</a></li>
+                        <li><a class="text-decoration-none" href="#">Puma</a></li>
+                        <li><a class="text-decoration-none" href="#">MLB</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                        <li><a class="text-decoration-none" href="#">About Us</a></li>
+                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
+                            placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name
+                            | Designed by <a rel="sponsored" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+    <div class="modal">
+
+    </div>
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="/Admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="assets/js/userListOrder.js"></script>
+    <script src="assets/js/customer.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>
