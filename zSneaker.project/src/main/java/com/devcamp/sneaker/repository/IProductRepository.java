@@ -85,7 +85,7 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 	// delete product by Id
 	@Transactional
 	@Modifying
-	@Query(value = "DELETE FROM `order_details` WHERE id = :productId", nativeQuery = true)
+	@Query(value = "DELETE FROM `products` WHERE id = :productId", nativeQuery = true)
 	int deleteProductById(@Param("productId") Integer productId);
 	
 	// delete product by product_line_id

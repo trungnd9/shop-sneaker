@@ -49,8 +49,9 @@ var gCustomersTable = $("#customers-table").DataTable({
     columns: [
         { data: gCOL_CUSTOMER[gCOL_NAME] },
         { data: gCOL_CUSTOMER[gCOL_ORDERNUMER] },
-        { data: gCOL_CUSTOMER[gCOL_TOTALMONEY],
-            render: function(money) {
+        {
+            data: gCOL_CUSTOMER[gCOL_TOTALMONEY],
+            render: function (money) {
                 return convertMoney(money);
             }
         }
@@ -174,9 +175,9 @@ function convertMoney(num) {
 // hiển thị thông báo
 function showAlert(status, message, timer) {
     Swal.fire({
-      icon: status,
-      html: `<p class="text-black">${message}`,
-      showConfirmButton: false,
-      timer: timer
+        icon: status,
+        html: `<p class="text-black">${message}`,
+        showConfirmButton: false,
+        timer: timer
     })
-  }
+}

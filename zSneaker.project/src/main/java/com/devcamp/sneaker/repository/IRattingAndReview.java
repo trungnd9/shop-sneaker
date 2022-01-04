@@ -19,10 +19,17 @@ public interface IRattingAndReview extends JpaRepository<RatingAndReview, Long> 
 			+ "WHERE orders.id = :orderId", nativeQuery = true)
 	int deleteRatingReviewByOrderId(@Param("orderId") Integer orderId);
 	
-	//delete order detail by customerId
+	//delete rating customerId
 		@Transactional
 		@Modifying
 		@Query(value = "DELETE `rating_and_review` FROM rating_and_review INNER JOIN order_details ON rating_and_review.orders_detail_id = order_details.id \r\n"
 				+ "INNER JOIN orders ON order_details.order_id = orders.id INNER JOIN customers ON orders.customer_id = customers.id WHERE customers.id = :customerId", nativeQuery = true)
 		int deleteRatingReviewByCustomerId(@Param("customerId") Integer customerId);
+		
+	//delete rating by customerId
+	@Transactional
+	@Modifying
+	@Query(value = "DELETE `rating_and_review` FROM rating_and_review JOIN order_details ON rating_and_review.orders_detail_id = order_details.id\r\n"
+			+ "JOIN products ON order_details.product_id = products.id WHERE products.id = :productId", nativeQuery = true)
+	int deleteRatingReviewByProductId(@Param("productId") Integer productId);
 }

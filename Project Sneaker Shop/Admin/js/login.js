@@ -137,3 +137,12 @@ function deleteCookie(name, path, domain) {
     }
 }
 
+function showAlert(status, message, timer) {
+    Swal.fire({
+        icon: status,
+        html: `<p class="text-black">${message}`,
+        showConfirmButton: false,
+        timer: timer
+    })
+}
+

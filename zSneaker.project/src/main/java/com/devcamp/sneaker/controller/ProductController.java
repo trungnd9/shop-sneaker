@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devcamp.sneaker.entity.ImageProduct;
 import com.devcamp.sneaker.entity.Product;
 import com.devcamp.sneaker.entity.ProductLine;
 import com.devcamp.sneaker.repository.*;
@@ -31,6 +32,10 @@ public class ProductController {
 	IProductLineRepository productLineRepo;
 	@Autowired
 	IOrderDetailRepository orderDetailRepo;
+	@Autowired
+	IImageProductRepository imageRepo;
+	@Autowired
+	IRattingAndReview ratingReviewRepo;
 	
 	// show all product
 	@GetMapping("/products")
@@ -181,8 +186,22 @@ public class ProductController {
 		try {
 			Optional<ProductLine> productLine = productLineRepo.findById(productLineId);
 			if (productLine.isPresent()) {
-				newProduct.setProductLineId(productLine.get());
-				return new ResponseEntity<>(productRepo.save(newProduct), HttpStatus.CREATED);
+				Product product = new Product();
+				product.setBuyPrice(newProduct.getBuyPrice());
+				product.setProductCode(newProduct.getProductCode());
+				product.setProductDescription(newProduct.getProductDescription());
+				product.setProductName(newProduct.getProductName());
+				product.setProductSize(newProduct.getProductSize());
+				product.setProductColor(newProduct.getProductColor());
+				product.setProductVendor(newProduct.getProductVendor());
+				product.setQuantityInStock(newProduct.getQuantityInStock());
+				product.setProductLineId(productLine.get());
+				
+				ImageProduct imageProduct = new ImageProduct();
+				imageProduct.setProductId(product);
+				imageProduct.setUrl("assets/img/bg-01.jpg");
+				imageRepo.save(imageProduct);
+				return new ResponseEntity<>(productRepo.save(product), HttpStatus.CREATED);
 			}
 			else {
 				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -223,6 +242,8 @@ public class ProductController {
 		try {
 			Optional<Product> productFound = productRepo.findById(productId);
 			if (productFound.isPresent()) {
+				imageRepo.deleteImageByProductId(productId);
+				ratingReviewRepo.deleteRatingReviewByProductId(productId);
 				orderDetailRepo.deleteOrderDetailByProductId(productId);
 				productRepo.deleteProductById(productId);
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);

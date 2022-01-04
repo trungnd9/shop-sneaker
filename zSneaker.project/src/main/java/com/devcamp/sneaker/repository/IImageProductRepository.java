@@ -19,4 +19,10 @@ public interface IImageProductRepository extends JpaRepository<ImageProduct, Int
 	@Modifying
 	@Query(value = "DELETE FROM `product_img` WHERE id = :imageProduct", nativeQuery = true)
 	int deleteImageById(@Param("imageProduct") Integer imageProduct);
+	
+	// delete image product by Id
+	@Transactional
+	@Modifying
+	@Query(value = "DELETE FROM `product_img` WHERE product_id = :productId", nativeQuery = true)
+	int deleteImageByProductId(@Param("productId") Integer productId);
 }

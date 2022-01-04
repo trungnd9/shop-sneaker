@@ -96,9 +96,9 @@ public class ImageProductController {
 	@DeleteMapping("/deleteImageProduct/{imageProductId}")
 	public ResponseEntity<Object> deleteImageProduct(@PathVariable Integer imageProductId) {
 		Optional<ImageProduct> imageProduct = pImageProductRepo.findById(imageProductId);
-		Path image = Paths.get("D:\\JAVA SCRIPT\\Shop\\Project Sneaker Shop\\" + imageProduct.get().getUrl());
+		Path image = Paths.get("/Users/Trung/Documents/GitHub/shop-sneaker/Project Sneaker Shop/" + imageProduct.get().getUrl());
 		try {
-			Files.delete(image);
+//			Files.delete(image);
 			pImageProductRepo.deleteImageById(imageProductId);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		} catch (Exception e) {

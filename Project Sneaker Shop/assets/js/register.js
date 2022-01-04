@@ -58,7 +58,7 @@
     // gọi Api tạo user
     function callApiCreateUser(paramUser) {
         $.ajax({
-            url: gURL_USER + `/register`,
+            url: gURL_USER + `/register/customer`,
             type: "POST",
             data: JSON.stringify(paramUser),
             dataType: "json",

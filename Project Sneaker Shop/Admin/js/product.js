@@ -397,6 +397,7 @@ function getDataProduct(paramProduct) {
     paramProduct.productCode = $("#inp-product-code").val();
     paramProduct.productName = $("#inp-product-name").val();
     paramProduct.productDescription = $("#inp-description").val();
+    paramProduct.productColor = $("#inp-product-color").val();
     paramProduct.productScale = $("#inp-product-scale").val();
     paramProduct.productVendor = $("#inp-product-vendor").val();
     paramProduct.quantityInStock = $("#inp-quantity-in-stock").val();
@@ -494,7 +495,7 @@ function callApiDeleteProduct(paramProduct) {
                 url: gURL + `/${paramProduct.id}`,
                 type: "DELETE",
                 success: function () {
-                    showAlert("success", "Delete Country complete!", 3000);
+                    showAlert("success", "Đã xoá!", 3000);
                     loadDataProductToTable();
                 }
             });

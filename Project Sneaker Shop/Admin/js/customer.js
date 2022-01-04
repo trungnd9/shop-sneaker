@@ -55,7 +55,7 @@ var gCustomersTable = $("#customers-table").DataTable({
     {
       targets: -1,
       defaultContent: `<i class="far fa-lg fas fa-user-edit text-success btn-edit"></i> | 
-      <i class="fas fa-lg fa-shopping-cart text-warning btn-orders"></i> | <i class="fas fa-lg fa-money-bill-alt text-primary btn-payment"></i> | <i class="fas fa-lg fa-user-minus btn-delete text-danger"></i>`
+      <i class="fas fa-lg fa-shopping-cart text-warning btn-orders"></i> | <i class="fas fa-lg fa-money-bill-alt text-primary btn-payment mt-3"></i> | <i class="fas fa-lg fa-user-minus btn-delete text-danger mt-3"></i>`
     },
   ],
 });
