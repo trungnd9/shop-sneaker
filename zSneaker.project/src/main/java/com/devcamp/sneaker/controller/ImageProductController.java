@@ -55,7 +55,7 @@ public class ImageProductController {
 		Optional<Product> product = pProductRepo.findById(productId);
 		String productBrand = product.get().getProductVendor();
 		Path imageUpload = Paths
-				.get("D:\\JAVA SCRIPT\\Shop\\Project Sneaker Shop\\assets\\img\\product\\upload\\" + productBrand);
+				.get("/Users/Trung/Documents/GitHub/shop-sneaker/Project Sneaker Shop/assets/img/product/upload/" + productBrand);
 		if (!Files.exists(imageUpload)) {
 			Files.createDirectories(imageUpload);
 		}
@@ -65,7 +65,7 @@ public class ImageProductController {
 		}
 
 		ImageProduct imageProduct = new ImageProduct();
-		imageProduct.setUrl("assets\\img\\product\\upload" + "\\" + productBrand + "\\" + image.getOriginalFilename());
+		imageProduct.setUrl("assets/img/product/upload/" + productBrand + "/" + image.getOriginalFilename());
 		imageProduct.setProductId(product.get());
 		return pImageProductRepo.save(imageProduct);
 	}

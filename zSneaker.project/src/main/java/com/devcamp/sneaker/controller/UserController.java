@@ -224,7 +224,7 @@ public class UserController {
 		Optional<User> user = userRepository.findById(userId);
 		String userFolder = user.get().getUsername();
 		Path imageUpload = Paths
-				.get("D:\\JAVA SCRIPT\\Shop\\Project Sneaker Shop\\assets\\img\\user\\upload\\" + userFolder);
+				.get("/Users/Trung/Documents/GitHub/shop-sneaker/Project Sneaker Shop/assets/img/user/upload/" + userFolder);
 		if (!Files.exists(imageUpload)) {
 			Files.createDirectories(imageUpload);
 		}
@@ -234,7 +234,7 @@ public class UserController {
 		}
 
 		User userUpdate = user.get();
-		userUpdate.setPhotos("assets\\img\\user\\upload" + "\\" + userFolder + "\\" + image.getOriginalFilename());
+		userUpdate.setPhotos("assets/img/user/upload/" + userFolder + "/" + image.getOriginalFilename());
 		return userRepository.save(userUpdate);
 	}
 }

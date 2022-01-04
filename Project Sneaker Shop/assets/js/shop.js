@@ -592,7 +592,7 @@ function handleRespon(paramResponProduct) {
             </div>
             <div class="row pb-3 btn-product">
                 <div class="col d-grid ">
-                    <button type="button" class="btn btn-success btn-lg btn-modal-buy w3-hover-orange w3-hover-shadow" name="submit" value="buy" id ="${paramResponProduct.id}">Mua ngay</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-modal-buy w3-hover-blue w3-hover-shadow" name="submit" value="buy" id ="${paramResponProduct.id}">Mua ngay</button>
                 </div>
                 <div class="col d-grid">
                     <button type="button" class="btn btn-success btn-lg btn-modal-add-cart w3-hover-orange w3-hover-shadow" name="submit" value="addtocard" id ="${paramResponProduct.id}">Thêm vào giỏ hàng</button>
